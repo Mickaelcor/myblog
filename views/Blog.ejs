@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap-->
+    <%- include('partials/Bootstrap.ejs') %>
+        <title>Blog</title>
+</head>
+
+<body>
+    <%- include('partials/Navbar.ejs') %>
+        <div class="container">
+            <form action="/new-post" method="post">
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" name="title"
+                        placeholder="Alice aux pays des merveilles">
+                    <label for="floatingInput">Titre du post</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" name="autor" placeholder="John doe">
+                    <label for="floatingInput">Auteur</label>
+                </div>
+
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="desc"
+                        style="height:100px"></textarea>
+                    <label for="floatingTextarea2">Description</label>
+                </div>
+
+                <br>
+                <div class="d-grid gap-2">
+                    <input type="submit" class="btn btn-success" value="Envoyer">
+                </div>
+            </form>
+        </div>
+</body>
+
+</html>

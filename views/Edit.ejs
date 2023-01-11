@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+
+<body>
+    <%= data %>
+        <h1>Bonjour <%=data.nom %>
+                <%=data.prenom %>
+        </h1>
+        <p>Voici votre email :
+        <h3>
+            <%=data.email %>
+        </h3>
+        </p>
+        Vous avez : <%= data.age %> ans
+
+            <h3>Editer cette donnée</h3>
+            <form action="/contact/edit/<%= data._id%>?_method=PUT" method="post">
+
+                <input type="hidden" name="_method" value="PUT">
+
+                <label for="">Votre Nom</label>
+                <input type="text" name="nom" placeholder="Nom">
+                <br>
+                <label for="">Votre Prénom</label>
+                <input type="text" name="prenom" placeholder="Prénom">
+                <br>
+                <label for="">Votre Email</label>
+                <input type="email" name="email" placeholder="Email">
+                <br>
+                <label for="">Votre Age</label>
+                <input type="number" name="age" placeholder="12">
+                <br>
+                <input type="submit" value="Envoyer">
+            </form>
+
+            <h3>Supprimer cette donnée</h3>
+            <form action="/contact/delete/<%= data._id%>?_method=DELETE" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+
+                <input type="submit" value="Supprimer">
+            </form>
+</body>
+
+</html>
